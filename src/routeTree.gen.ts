@@ -10,33 +10,164 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AiLabRouteImport } from './routes/ai-lab'
+import { Route as ResumeRouteImport } from './routes/resume'
+import { Route as WorkRouteImport } from './routes/work'
+import { Route as AiLabAgileBoardRouteImport } from './routes/ai-lab.agile-board'
+import { Route as AiLabPmCopilotRouteImport } from './routes/ai-lab.pm-copilot'
+import { Route as AiLabProjectIntelligenceRouteImport } from './routes/ai-lab.project-intelligence'
+import { Route as AiLabProjectStatusAnalystRouteImport } from './routes/ai-lab.project-status-analyst'
+import { Route as AiLabUatBuddyRouteImport } from './routes/ai-lab.uat-buddy'
+import { Route as AiLabWeeklyStatusAutomationRouteImport } from './routes/ai-lab.weekly-status-automation'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiLabRoute = AiLabRouteImport.update({
+  id: '/ai-lab',
+  path: '/ai-lab',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResumeRoute = ResumeRouteImport.update({
+  id: '/resume',
+  path: '/resume',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkRoute = WorkRouteImport.update({
+  id: '/work',
+  path: '/work',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiLabAgileBoardRoute = AiLabAgileBoardRouteImport.update({
+  id: '/agile-board',
+  path: '/agile-board',
+  getParentRoute: () => AiLabRoute,
+} as any)
+const AiLabPmCopilotRoute = AiLabPmCopilotRouteImport.update({
+  id: '/pm-copilot',
+  path: '/pm-copilot',
+  getParentRoute: () => AiLabRoute,
+} as any)
+const AiLabProjectIntelligenceRoute =
+  AiLabProjectIntelligenceRouteImport.update({
+    id: '/project-intelligence',
+    path: '/project-intelligence',
+    getParentRoute: () => AiLabRoute,
+  } as any)
+const AiLabProjectStatusAnalystRoute =
+  AiLabProjectStatusAnalystRouteImport.update({
+    id: '/project-status-analyst',
+    path: '/project-status-analyst',
+    getParentRoute: () => AiLabRoute,
+  } as any)
+const AiLabUatBuddyRoute = AiLabUatBuddyRouteImport.update({
+  id: '/uat-buddy',
+  path: '/uat-buddy',
+  getParentRoute: () => AiLabRoute,
+} as any)
+const AiLabWeeklyStatusAutomationRoute =
+  AiLabWeeklyStatusAutomationRouteImport.update({
+    id: '/weekly-status-automation',
+    path: '/weekly-status-automation',
+    getParentRoute: () => AiLabRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/ai-lab': typeof AiLabRouteWithChildren
+  '/resume': typeof ResumeRoute
+  '/work': typeof WorkRoute
+  '/ai-lab/agile-board': typeof AiLabAgileBoardRoute
+  '/ai-lab/pm-copilot': typeof AiLabPmCopilotRoute
+  '/ai-lab/project-intelligence': typeof AiLabProjectIntelligenceRoute
+  '/ai-lab/project-status-analyst': typeof AiLabProjectStatusAnalystRoute
+  '/ai-lab/uat-buddy': typeof AiLabUatBuddyRoute
+  '/ai-lab/weekly-status-automation': typeof AiLabWeeklyStatusAutomationRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/ai-lab': typeof AiLabRouteWithChildren
+  '/resume': typeof ResumeRoute
+  '/work': typeof WorkRoute
+  '/ai-lab/agile-board': typeof AiLabAgileBoardRoute
+  '/ai-lab/pm-copilot': typeof AiLabPmCopilotRoute
+  '/ai-lab/project-intelligence': typeof AiLabProjectIntelligenceRoute
+  '/ai-lab/project-status-analyst': typeof AiLabProjectStatusAnalystRoute
+  '/ai-lab/uat-buddy': typeof AiLabUatBuddyRoute
+  '/ai-lab/weekly-status-automation': typeof AiLabWeeklyStatusAutomationRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/ai-lab': typeof AiLabRouteWithChildren
+  '/resume': typeof ResumeRoute
+  '/work': typeof WorkRoute
+  '/ai-lab/agile-board': typeof AiLabAgileBoardRoute
+  '/ai-lab/pm-copilot': typeof AiLabPmCopilotRoute
+  '/ai-lab/project-intelligence': typeof AiLabProjectIntelligenceRoute
+  '/ai-lab/project-status-analyst': typeof AiLabProjectStatusAnalystRoute
+  '/ai-lab/uat-buddy': typeof AiLabUatBuddyRoute
+  '/ai-lab/weekly-status-automation': typeof AiLabWeeklyStatusAutomationRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/ai-lab'
+    | '/resume'
+    | '/work'
+    | '/ai-lab/agile-board'
+    | '/ai-lab/pm-copilot'
+    | '/ai-lab/project-intelligence'
+    | '/ai-lab/project-status-analyst'
+    | '/ai-lab/uat-buddy'
+    | '/ai-lab/weekly-status-automation'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/ai-lab'
+    | '/resume'
+    | '/work'
+    | '/ai-lab/agile-board'
+    | '/ai-lab/pm-copilot'
+    | '/ai-lab/project-intelligence'
+    | '/ai-lab/project-status-analyst'
+    | '/ai-lab/uat-buddy'
+    | '/ai-lab/weekly-status-automation'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/ai-lab'
+    | '/resume'
+    | '/work'
+    | '/ai-lab/agile-board'
+    | '/ai-lab/pm-copilot'
+    | '/ai-lab/project-intelligence'
+    | '/ai-lab/project-status-analyst'
+    | '/ai-lab/uat-buddy'
+    | '/ai-lab/weekly-status-automation'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AiLabRoute: typeof AiLabRouteWithChildren
+  ResumeRoute: typeof ResumeRoute
+  WorkRoute: typeof WorkRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +179,105 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-lab': {
+      id: '/ai-lab'
+      path: '/ai-lab'
+      fullPath: '/ai-lab'
+      preLoaderRoute: typeof AiLabRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resume': {
+      id: '/resume'
+      path: '/resume'
+      fullPath: '/resume'
+      preLoaderRoute: typeof ResumeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work': {
+      id: '/work'
+      path: '/work'
+      fullPath: '/work'
+      preLoaderRoute: typeof WorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-lab/agile-board': {
+      id: '/ai-lab/agile-board'
+      path: '/agile-board'
+      fullPath: '/ai-lab/agile-board'
+      preLoaderRoute: typeof AiLabAgileBoardRouteImport
+      parentRoute: typeof AiLabRoute
+    }
+    '/ai-lab/pm-copilot': {
+      id: '/ai-lab/pm-copilot'
+      path: '/pm-copilot'
+      fullPath: '/ai-lab/pm-copilot'
+      preLoaderRoute: typeof AiLabPmCopilotRouteImport
+      parentRoute: typeof AiLabRoute
+    }
+    '/ai-lab/project-intelligence': {
+      id: '/ai-lab/project-intelligence'
+      path: '/project-intelligence'
+      fullPath: '/ai-lab/project-intelligence'
+      preLoaderRoute: typeof AiLabProjectIntelligenceRouteImport
+      parentRoute: typeof AiLabRoute
+    }
+    '/ai-lab/project-status-analyst': {
+      id: '/ai-lab/project-status-analyst'
+      path: '/project-status-analyst'
+      fullPath: '/ai-lab/project-status-analyst'
+      preLoaderRoute: typeof AiLabProjectStatusAnalystRouteImport
+      parentRoute: typeof AiLabRoute
+    }
+    '/ai-lab/uat-buddy': {
+      id: '/ai-lab/uat-buddy'
+      path: '/uat-buddy'
+      fullPath: '/ai-lab/uat-buddy'
+      preLoaderRoute: typeof AiLabUatBuddyRouteImport
+      parentRoute: typeof AiLabRoute
+    }
+    '/ai-lab/weekly-status-automation': {
+      id: '/ai-lab/weekly-status-automation'
+      path: '/weekly-status-automation'
+      fullPath: '/ai-lab/weekly-status-automation'
+      preLoaderRoute: typeof AiLabWeeklyStatusAutomationRouteImport
+      parentRoute: typeof AiLabRoute
+    }
   }
 }
 
+interface AiLabRouteChildren {
+  AiLabAgileBoardRoute: typeof AiLabAgileBoardRoute
+  AiLabPmCopilotRoute: typeof AiLabPmCopilotRoute
+  AiLabProjectIntelligenceRoute: typeof AiLabProjectIntelligenceRoute
+  AiLabProjectStatusAnalystRoute: typeof AiLabProjectStatusAnalystRoute
+  AiLabUatBuddyRoute: typeof AiLabUatBuddyRoute
+  AiLabWeeklyStatusAutomationRoute: typeof AiLabWeeklyStatusAutomationRoute
+}
+
+const AiLabRouteChildren: AiLabRouteChildren = {
+  AiLabAgileBoardRoute: AiLabAgileBoardRoute,
+  AiLabPmCopilotRoute: AiLabPmCopilotRoute,
+  AiLabProjectIntelligenceRoute: AiLabProjectIntelligenceRoute,
+  AiLabProjectStatusAnalystRoute: AiLabProjectStatusAnalystRoute,
+  AiLabUatBuddyRoute: AiLabUatBuddyRoute,
+  AiLabWeeklyStatusAutomationRoute: AiLabWeeklyStatusAutomationRoute,
+}
+
+const AiLabRouteWithChildren = AiLabRoute._addFileChildren(AiLabRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AiLabRoute: AiLabRouteWithChildren,
+  ResumeRoute: ResumeRoute,
+  WorkRoute: WorkRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
