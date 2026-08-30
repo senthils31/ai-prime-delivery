@@ -6,7 +6,13 @@ type Props = { large?: boolean };
 
 export function DeliveryIntelligenceEngine({ large = false }: Props) {
   const [activeKey, setActiveKey] = useState<LoopStage["key"]>("intelligence");
-  const active = loopStages.find((stage) => stage.key === activeKey) ?? loopStages[3];
+  const active: LoopStage = loopStages.find((stage) => stage.key === activeKey) ?? {
+    key: "intelligence",
+    number: "04",
+    title: "INTELLIGENCE",
+    summary: "AI interprets the signals",
+    details: "Insights · Patterns · Recommendations",
+  };
 
   return (
     <div className={`engine-shell ${large ? "large" : ""}`} aria-label="Delivery Intelligence Loop interactive diagram">
