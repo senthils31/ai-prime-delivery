@@ -34,6 +34,9 @@
   --color-slate: var(--slate);
   --color-line: var(--line);
   --color-blue-wash: var(--blue-wash);
+  --color-dark-muted: var(--dark-muted);
+  --color-dark-line: var(--dark-line);
+  --color-dark-hover: var(--dark-hover);
 }
 
 :root {
@@ -46,6 +49,9 @@
   --slate: oklch(0.516 0.052 257);
   --line: oklch(0.913 0.025 255);
   --blue-wash: oklch(0.94 0.045 260);
+  --dark-muted: oklch(0.76 0.025 258);
+  --dark-line: oklch(1 0 0 / 0.12);
+  --dark-hover: oklch(1 0 0 / 0.1);
   --radius: 1rem;
 }
 
