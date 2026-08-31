@@ -11,11 +11,11 @@ function Label({ children, light = false }: { children: React.ReactNode; light?:
 function HomePage() {
   return <main>
     <section className="relative overflow-hidden">
-      <div className="page-shell hero-grid">
-        <div className="hero-copy">
+      <div className="page-shell pt-[clamp(7rem,12vw,10rem)] pb-20">
+        <div className="hero-copy relative z-10 max-w-4xl">
           <div className="mb-7 flex items-center gap-3 text-[0.68rem] font-bold tracking-[0.14em] text-slate"><span className="size-2 animate-pulse rounded-full bg-primary" />AI-FIRST DELIVERY · ENTERPRISE TRANSFORMATION</div>
           <div className="hero-rule mb-7" />
-          <h1 className="display-title max-w-[11ch] text-foreground">AI-First Project &amp; <span className="text-primary">Transformation</span> Leader.</h1>
+          <h1 className="display-title max-w-[14ch] text-foreground">AI-First Project &amp; <span className="text-primary">Transformation</span> Leader.</h1>
           <p className="body-copy mt-7 max-w-[36rem]">Turning complex enterprise technology initiatives into measurable business outcomes — powered by AI, automation and Lean-Agile delivery.</p>
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Button asChild size="lg"><Link to="/work">Explore My Work <ArrowRight aria-hidden="true" /></Link></Button>
@@ -27,7 +27,6 @@ function HomePage() {
             <div><div className="metric-number">200<span className="text-primary">+</span></div><div className="metric-label mt-2">Enterprise Releases</div></div>
           </div>
         </div>
-        <div className="hero-visual"><div className="mb-2 flex items-center justify-between"><Label>Delivery Intelligence</Label><span className="text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-slate">Continuous system / 01</span></div><DeliveryIntelligenceEngine /></div>
       </div>
     </section>
 
