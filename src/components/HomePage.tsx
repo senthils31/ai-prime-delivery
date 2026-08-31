@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Github, Linkedin, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { DeliveryIntelligenceEngine } from "@/components/DeliveryIntelligenceEngine";
+
 import { capabilities, career, futureSolutions, liveSolutions } from "@/data/site";
 
 function Label({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
