@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Github, Linkedin, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { DeliveryIntelligenceEngine } from "@/components/DeliveryIntelligenceEngine";
+
 import { capabilities, career, futureSolutions, liveSolutions } from "@/data/site";
 
 function Label({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
@@ -11,11 +11,11 @@ function Label({ children, light = false }: { children: React.ReactNode; light?:
 function HomePage() {
   return <main>
     <section className="relative overflow-hidden">
-      <div className="page-shell hero-grid">
-        <div className="hero-copy">
+      <div className="page-shell pt-[clamp(7rem,12vw,10rem)] pb-20">
+        <div className="hero-copy relative z-10 max-w-4xl">
           <div className="mb-7 flex items-center gap-3 text-[0.68rem] font-bold tracking-[0.14em] text-slate"><span className="size-2 animate-pulse rounded-full bg-primary" />AI-FIRST DELIVERY · ENTERPRISE TRANSFORMATION</div>
           <div className="hero-rule mb-7" />
-          <h1 className="display-title max-w-[11ch] text-foreground">AI-First Project &amp; <span className="text-primary">Transformation</span> Leader.</h1>
+          <h1 className="display-title max-w-[14ch] text-foreground">AI-First Project &amp; <span className="text-primary">Transformation</span> Leader.</h1>
           <p className="body-copy mt-7 max-w-[36rem]">Turning complex enterprise technology initiatives into measurable business outcomes — powered by AI, automation and Lean-Agile delivery.</p>
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Button asChild size="lg"><Link to="/work">Explore My Work <ArrowRight aria-hidden="true" /></Link></Button>
@@ -27,7 +27,6 @@ function HomePage() {
             <div><div className="metric-number">200<span className="text-primary">+</span></div><div className="metric-label mt-2">Enterprise Releases</div></div>
           </div>
         </div>
-        <div className="hero-visual"><div className="mb-2 flex items-center justify-between"><Label>Delivery Intelligence</Label><span className="text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-slate">Continuous system / 01</span></div><DeliveryIntelligenceEngine /></div>
       </div>
     </section>
 
@@ -37,7 +36,7 @@ function HomePage() {
 
     <section className="section-pad" id="philosophy"><div className="page-shell"><div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]"><div><Label>My Delivery Philosophy</Label></div><div><h2 className="section-title max-w-[12ch] text-foreground">I don&apos;t just manage projects. <span className="text-primary">I engineer better ways to deliver them.</span></h2><p className="body-copy mt-7 max-w-2xl">Combining people, process, technology and AI to create delivery models that are more predictable, intelligent and outcome-driven.</p></div></div><div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{capabilities.map((item) => <article key={item.number} className="capability-card"><span className="capability-index">{item.number}</span><h3 className="mt-12 text-[1.15rem] font-semibold tracking-[-0.02em]">{item.title}</h3><p className="mt-3 text-sm leading-6 text-slate">{item.copy}</p></article>)}</div></div></section>
 
-    <section className="dark-band section-pad overflow-hidden" id="delivery-loop"><div className="page-shell"><div className="grid items-center gap-10 lg:grid-cols-[0.75fr_1.25fr]"><div><Label light>The Delivery Intelligence Loop</Label><h2 className="section-title mt-5 max-w-[11ch]">Every project generates signals.</h2><p className="body-copy mt-7 max-w-md">The opportunity is turning those signals into better decisions.</p><div className="mt-9 grid gap-4 text-sm text-dark-muted"><span><strong className="mr-3 text-primary">01—05</strong>Signal to decision</span><span><strong className="mr-3 text-primary">AI</strong>Interpretation layer</span><span><strong className="mr-3 text-primary">↺</strong>Continuous improvement</span></div></div><div><DeliveryIntelligenceEngine large /></div></div><div className="mt-10 grid gap-4 border-t border-dark-line pt-8 md:grid-cols-5">{['PLAN', 'EXECUTE', 'OBSERVE', 'INTELLIGENCE', 'OPTIMIZE'].map((stage, index) => <div key={stage}><span className="text-xs font-bold text-primary">0{index + 1}</span><p className="mt-3 text-sm font-semibold">{stage}</p><p className="mt-2 text-xs leading-5 text-dark-muted">{['AI-assisted planning', 'Structured delivery', 'Capture project signals', 'AI interprets the signals', 'Improve delivery'][index]}</p></div>)}</div></div></section>
+    
 
     <section className="section-pad" id="ai-lab"><div className="page-shell"><div className="flex flex-col justify-between gap-6 md:flex-row md:items-end"><div><Label>AI PM Lab</Label><h2 className="section-title mt-5">AI PM Lab</h2></div><p className="body-copy max-w-md">Experiments, agents and tools I&apos;m building to rethink project delivery.</p></div><div className="mt-14 grid gap-4 lg:grid-cols-3">{liveSolutions.map((solution) => <article key={solution.title} className={`solution-card ${solution.featured ? 'is-featured' : ''}`}><span className="status-pill">LIVE</span><h3 className="mt-8 text-2xl font-semibold tracking-[-0.04em]">{solution.title}</h3><p className="mt-4 text-sm leading-6 text-slate">{solution.copy}</p><div className="mt-auto flex flex-wrap gap-x-5 gap-y-2 border-t border-border pt-5">{solution.lines.map((line) => <span key={line} className="text-xs font-semibold text-foreground/75">{line}</span>)}</div><Link to="/ai-lab" className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-primary">Explore <ArrowRight className="size-4" aria-hidden="true" /></Link></article>)}</div><div className="mt-20"><div className="flex items-center gap-4"><span className="overline text-slate">Coming Soon · AI PM Ecosystem</span><span className="h-px flex-1 bg-border" /></div><div className="mt-7 grid gap-4 md:grid-cols-3">{futureSolutions.map((solution) => <article key={solution.title} className="future-card"><span className="status-pill">COMING SOON</span><h3 className="mt-6 text-lg font-semibold">{solution.title}</h3><p className="mt-2 text-sm leading-6 text-slate">{solution.copy}</p></article>)}</div></div></div></section>
 
