@@ -110,7 +110,8 @@ body {
 .node-observe { bottom: 11%; right: 5%; }
 .node-intelligence { bottom: 0; left: 8%; }
 .node-optimize { top: 45%; left: -1%; }
-.loop-insight { position: absolute; z-index: 4; right: 4%; bottom: 2%; width: min(15rem, 37%); padding: 1rem; border-left: 2px solid var(--signal-violet); background: color-mix(in oklab, var(--pure-white) 94%, transparent); box-shadow: 0 12px 30px color-mix(in oklab, var(--midnight) 8%, transparent); }
+.engine-block { width: 100%; }
+.loop-insight { position: relative; z-index: 4; margin-top: 1.5rem; width: 100%; padding: 1rem 1.15rem; border-radius: 0.6rem; border-left: 2px solid var(--signal-violet); background: color-mix(in oklab, var(--pure-white) 94%, transparent); box-shadow: 0 12px 30px color-mix(in oklab, var(--midnight) 8%, transparent); }
 .loop-insight p { margin-top: 0.35rem; color: var(--slate); font-size: 0.75rem; line-height: 1.45; }
 .loop-insight strong { font-size: 0.7rem; letter-spacing: 0.1em; }
 .dark-band { background: var(--midnight); color: var(--pure-white); }
@@ -175,7 +176,7 @@ body {
   .node-observe { bottom: 11%; right: 1%; }
   .node-intelligence { bottom: 1%; left: 2%; }
   .node-optimize { top: 45%; left: -3%; }
-  .loop-insight { right: 0; bottom: 16%; width: 8.6rem; padding: 0.7rem; }
+  .loop-insight { width: 100%; padding: 0.85rem; }
   .loop-insight p { font-size: 0.68rem; }
   .section-pad { padding-block: 5rem; }
   .portrait-frame { max-width: 20rem; margin-inline: auto; }

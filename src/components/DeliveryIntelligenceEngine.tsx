@@ -15,6 +15,7 @@ export function DeliveryIntelligenceEngine({ large = false }: Props) {
   };
 
   return (
+    <div className="engine-block">
     <div className={`engine-shell ${large ? "large" : ""}`} aria-label="Delivery Intelligence Loop interactive diagram">
       <div className="engine-grid" aria-hidden="true" />
       <div className="engine-orbit" aria-hidden="true" />
@@ -27,6 +28,7 @@ export function DeliveryIntelligenceEngine({ large = false }: Props) {
         <small>{stage.number}</small><strong>{stage.title}</strong>
       </Button>)}
       <div className="engine-center" aria-hidden="true"><div><span>✦</span><strong>DELIVERY<br />INTELLIGENCE</strong></div></div>
+    </div>
       <div className="loop-insight" aria-live="polite"><strong>{active.title}</strong><p>{active.summary}<br />{active.details}</p></div>
     </div>
   );
