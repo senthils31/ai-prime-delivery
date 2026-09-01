@@ -1,3 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PlaceholderPage } from "@/components/PlaceholderPage";
-export const Route = createFileRoute("/about")({ head: () => ({ meta: [{ title: "About — Senthilkumar Karuppiah" }, { name: "description", content: "The career and working philosophy of Senthilkumar Karuppiah, an AI-First Project & Transformation Leader." }, { property: "og:title", content: "About — Senthilkumar Karuppiah" }, { property: "og:description", content: "The career and working philosophy of Senthilkumar Karuppiah, an AI-First Project & Transformation Leader." }, { property: "og:url", content: "/about" }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }], links: [{ rel: "canonical", href: "/about" }] }), component: () => <PlaceholderPage eyebrow="About Senthilkumar" title="Human-led. AI-accelerated." copy="A deeper profile, contact details and professional links will live here in the next iteration." /> });
+import { AboutPage } from "@/components/AboutPage";
+
+export const Route = createFileRoute("/about")({
+  head: () => ({
+    meta: [
+      { title: "About — Senthilkumar Karuppiah" },
+      {
+        name: "description",
+        content:
+          "AI-First Project & Transformation Leader with 19+ years of enterprise IT experience across delivery, release management and digital transformation.",
+      },
+      { property: "og:title", content: "About — Senthilkumar Karuppiah" },
+      {
+        property: "og:description",
+        content:
+          "AI-First Project & Transformation Leader with 19+ years of enterprise IT experience across delivery, release management and digital transformation.",
+      },
+      { property: "og:url", content: "/about" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/about" }],
+  }),
+  component: AboutPage,
+});
