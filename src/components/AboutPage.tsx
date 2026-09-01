@@ -51,7 +51,7 @@ export function AboutPage() {
     <main>
       <section className="section-pad border-b border-border">
         <div className="page-shell grid items-center gap-14 lg:grid-cols-[0.72fr_1.28fr]">
-          <div className="portrait-frame">
+          <div className="portrait-frame w-full max-w-sm mx-auto lg:max-w-none lg:mx-0">
             <div className="portrait-initials" aria-hidden="true">
               SK
             </div>
