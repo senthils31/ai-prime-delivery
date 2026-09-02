@@ -16,6 +16,8 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
   const nextStudy = study.slug === "uat-buddy" ? "project-status-analyst" : study.slug === "project-status-analyst" ? "weekly-status-automation" : "uat-buddy";
   const nextName = nextStudy === "uat-buddy" ? "UAT Buddy" : nextStudy === "project-status-analyst" ? "Project Status Analyst" : "Weekly Status Automation";
 
+  const nextLink = nextStudy === "uat-buddy" ? <Link to="/ai-lab/uat-buddy">Next case study <ArrowRight aria-hidden="true" /></Link> : nextStudy === "project-status-analyst" ? <Link to="/ai-lab/project-status-analyst">Next case study <ArrowRight aria-hidden="true" /></Link> : <Link to="/ai-lab/weekly-status-automation">Next case study <ArrowRight aria-hidden="true" /></Link>;
+
   return (
     <main className="case-study-page">
       <section className="case-study-hero section-pad border-b border-border bg-pure-white">
@@ -66,7 +68,7 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
       </div>
 
       <section className="case-study-next border-t border-border">
-        <div className="page-shell flex flex-col justify-between gap-7 md:flex-row md:items-center"><div><p className="overline text-primary">Continue exploring</p><h2 className="mt-3 text-2xl font-semibold tracking-[-0.04em]">{nextName}</h2></div><Button asChild variant="outline"><Link to={`/ai-lab/${nextStudy}` as "/ai-lab/uat-buddy"}>Next case study <ArrowRight aria-hidden="true" /></Link></Button></div>
+        <div className="page-shell flex flex-col justify-between gap-7 md:flex-row md:items-center"><div><p className="overline text-primary">Continue exploring</p><h2 className="mt-3 text-2xl font-semibold tracking-[-0.04em]">{nextName}</h2></div><Button asChild variant="outline">{nextLink}</Button></div>
       </section>
     </main>
   );

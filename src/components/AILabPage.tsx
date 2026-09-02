@@ -3,6 +3,12 @@ import { Link } from "@tanstack/react-router";
 
 import { caseStudies } from "@/data/site";
 
+export function CaseStudyLink({ slug, children }: { slug: "uat-buddy" | "project-status-analyst" | "weekly-status-automation"; children: React.ReactNode }) {
+  if (slug === "uat-buddy") return <Link to="/ai-lab/uat-buddy">{children}</Link>;
+  if (slug === "project-status-analyst") return <Link to="/ai-lab/project-status-analyst">{children}</Link>;
+  return <Link to="/ai-lab/weekly-status-automation">{children}</Link>;
+}
+
 export function AILabPage() {
   return (
     <main>
@@ -36,9 +42,7 @@ export function AILabPage() {
                   <span>Problem</span><span aria-hidden="true">↓</span><span>Solution</span><span aria-hidden="true">↓</span><span>Impact</span>
                 </div>
                 <p className="mt-5 text-sm leading-6 text-slate">{study.copy}</p>
-                <Link to={`/ai-lab/${study.slug}` as "/ai-lab/uat-buddy"} className="mt-auto inline-flex items-center gap-2 pt-7 text-xs font-bold uppercase tracking-[0.12em] text-primary">
-                  Explore case study <ArrowRight className="size-4" aria-hidden="true" />
-                </Link>
+                <CaseStudyLink slug={study.slug}><span className="mt-auto inline-flex items-center gap-2 pt-7 text-xs font-bold uppercase tracking-[0.12em] text-primary">Explore case study <ArrowRight className="size-4" aria-hidden="true" /></span></CaseStudyLink>
               </article>
             ))}
           </div>

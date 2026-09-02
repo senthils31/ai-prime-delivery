@@ -22,9 +22,9 @@ export const capabilities = [
 ];
 
 export const liveSolutions = [
-  { title: "UAT Buddy", copy: "AI-powered UAT knowledge assistant helping business users get faster answers and reducing dependency on project teams.", lines: ["30+ users", "~10 queries/day", "1–2 hrs/week effort reduced"], featured: true },
-  { title: "Project Status Analyst", copy: "AI-powered project intelligence that helps delivery and technology leadership understand project status, risks and key signals.", lines: ["Directors", "Senior Directors", "Technology Leadership"], featured: false },
-  { title: "Weekly Status Automation", copy: "Automated executive project reporting using AI and workflow automation across project information sources.", lines: ["Power Automate", "SharePoint", "Excel", "PowerPoint"], featured: false },
+  { slug: "uat-buddy", title: "UAT Buddy", copy: "AI-powered UAT knowledge assistant helping business users get faster answers and reducing dependency on project teams.", lines: ["30+ users", "~10 queries/day", "1–2 hrs/week effort reduced"], featured: true },
+  { slug: "project-status-analyst", title: "Project Status Analyst", copy: "AI-powered project intelligence that helps delivery and technology leadership understand project status, risks and key signals.", lines: ["Directors", "Senior Directors", "Technology Leadership"], featured: false },
+  { slug: "weekly-status-automation", title: "Weekly Status Automation", copy: "Automated executive project reporting using AI and workflow automation across project information sources.", lines: ["Power Automate", "SharePoint", "Excel", "PowerPoint"], featured: false },
 ];
 
 export type CaseStudy = {
