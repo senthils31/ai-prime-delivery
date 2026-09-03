@@ -1,3 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PlaceholderPage } from "@/components/PlaceholderPage";
-export const Route = createFileRoute("/ai-lab")({ head: () => ({ meta: [{ title: "AI PM Lab — Senthilkumar Karuppiah" }, { name: "description", content: "Experiments, agents and tools Senthilkumar Karuppiah is building to rethink project delivery." }, { property: "og:title", content: "AI PM Lab — Senthilkumar Karuppiah" }, { property: "og:description", content: "Experiments, agents and tools Senthilkumar Karuppiah is building to rethink project delivery." }, { property: "og:url", content: "/ai-lab" }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }], links: [{ rel: "canonical", href: "/ai-lab" }] }), component: () => <PlaceholderPage eyebrow="AI PM Lab" title="The ecosystem is taking shape." copy="Explore the emerging set of AI-first project delivery solutions from the homepage, with dedicated product views coming next." /> });
+import { AILabPage } from "@/components/AILabPage";
+
+export const Route = createFileRoute("/ai-lab")({
+  head: () => ({
+    meta: [
+      { title: "AI PM Lab — Senthilkumar Karuppiah" },
+      { name: "description", content: "Evidence-based AI PM case studies applying practical intelligence and automation to enterprise delivery." },
+      { property: "og:title", content: "AI PM Lab — Senthilkumar Karuppiah" },
+      { property: "og:description", content: "Evidence-based AI PM case studies applying practical intelligence and automation to enterprise delivery." },
+      { property: "og:url", content: "/ai-lab" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/ai-lab" }],
+  }),
+  component: AILabPage,
+});

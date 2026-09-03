@@ -1,3 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PlaceholderPage } from "@/components/PlaceholderPage";
-export const Route = createFileRoute("/ai-lab/uat-buddy")({ head: () => ({ meta: [{ title: "UAT Buddy — Senthilkumar Karuppiah" }, { name: "description", content: "UAT Buddy, an AI-powered knowledge assistant in Senthilkumar Karuppiah's AI PM Lab." }, { property: "og:title", content: "UAT Buddy — Senthilkumar Karuppiah" }, { property: "og:description", content: "UAT Buddy, an AI-powered knowledge assistant in Senthilkumar Karuppiah's AI PM Lab." }, { property: "og:url", content: "/ai-lab/uat-buddy" }, { property: "og:type", content: "product" }, { name: "twitter:card", content: "summary_large_image" }], links: [{ rel: "canonical", href: "/ai-lab/uat-buddy" }] }), component: () => <PlaceholderPage eyebrow="AI PM Lab · Live" title="UAT Buddy" copy="This product view is part of the next AI PM Lab release." /> });
+import { CaseStudyPage } from "@/components/CaseStudyPage";
+import { caseStudies } from "@/data/site";
+
+export const Route = createFileRoute("/ai-lab/uat-buddy")({
+  head: () => ({ meta: [{ title: "UAT Buddy | Case Study" }, { name: "description", content: "An evidence-based case study for UAT Buddy, a self-service assistant for UAT knowledge and support." }, { property: "og:title", content: "UAT Buddy | Case Study" }, { property: "og:description", content: "An evidence-based case study for UAT Buddy, a self-service assistant for UAT knowledge and support." }, { property: "og:url", content: "/ai-lab/uat-buddy" }, { property: "og:type", content: "article" }, { name: "twitter:card", content: "summary_large_image" }], links: [{ rel: "canonical", href: "/ai-lab/uat-buddy" }] }),
+  component: () => <CaseStudyPage study={caseStudies[0]} />,
+});
