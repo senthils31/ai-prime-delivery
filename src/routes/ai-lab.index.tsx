@@ -1,6 +1,7 @@
-import { Outlet, createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { AILabPage } from "@/components/AILabPage";
 
-export const Route = createFileRoute("/ai-lab")({
+export const Route = createFileRoute("/ai-lab/")({
   head: () => ({
     meta: [
       { title: "AI PM Lab — Senthilkumar Karuppiah" },
@@ -13,5 +14,5 @@ export const Route = createFileRoute("/ai-lab")({
     ],
     links: [{ rel: "canonical", href: "/ai-lab" }],
   }),
-  component: () => <Outlet />,
+  component: AILabPage,
 });
