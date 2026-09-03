@@ -213,6 +213,16 @@ body {
   .loop-insight p { font-size: 0.68rem; }
   .section-pad { padding-block: 5rem; }
   .portrait-frame { max-width: 20rem; margin-inline: auto; }
+  .case-study-section { grid-template-columns: 1fr; gap: 1.5rem; padding-block: 4.5rem; }
+  .case-study-section-label { padding-top: 0; }
+  .case-study-hero .mt-16 { margin-top: 3.5rem; }
+  .case-study-flow { grid-template-columns: 1fr; }
+  .case-study-flow-step { min-height: auto; padding: 1rem; }
+  .case-study-flow-step strong { margin-top: 1.25rem; }
+  .case-study-flow-arrow { top: auto; right: auto; bottom: -0.7rem; left: 50%; transform: rotate(90deg); }
+  .case-study-metrics, .case-study-metrics.single, .before-after-grid { grid-template-columns: 1fr; max-width: none; }
+  .case-study-metrics > div { min-height: auto; }
+  .case-study-card { min-height: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
