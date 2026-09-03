@@ -68,14 +68,14 @@ export function AboutPage() {
             </h1>
             <div className="mt-8 max-w-2xl space-y-5">
               <p className="body-copy">
-                I&apos;m an AI-First Project &amp; Transformation Leader with 19+ years of enterprise IT
-                experience across Project &amp; Program Management, Service Delivery, Release
-                Management, and Digital Transformation.
+                I&apos;m an AI-First Project &amp; Transformation Leader with 19+ years of
+                enterprise IT experience across Project &amp; Program Management, Service Delivery,
+                Release Management, and Digital Transformation.
               </p>
               <p className="body-copy">
                 I specialize in turning complex technology initiatives into structured, measurable
-                business outcomes—bringing together people, processes, technology, governance, and AI
-                to deliver transformation at scale.
+                business outcomes—bringing together people, processes, technology, governance, and
+                AI to deliver transformation at scale.
               </p>
             </div>
 
@@ -148,8 +148,8 @@ export function AboutPage() {
                 ))}
               </ul>
               <p className="body-copy mt-6">
-                Examples include AI-enabled solutions such as UAT Buddy, Project Status Analyst,
-                and automated project-status reporting, helping teams reduce repetitive effort and
+                Examples include AI-enabled solutions such as UAT Buddy, Project Status Analyst, and
+                automated project-status reporting, helping teams reduce repetitive effort and
                 improve access to project insights.
               </p>
               <p className="body-copy mt-5">
