@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AiLabRouteImport } from './routes/ai-lab'
 import { Route as ResumeRouteImport } from './routes/resume'
 import { Route as WorkRouteImport } from './routes/work'
+import { Route as AiLabIndexRouteImport } from './routes/ai-lab.index'
 import { Route as AiLabAgileBoardRouteImport } from './routes/ai-lab.agile-board'
 import { Route as AiLabPmCopilotRouteImport } from './routes/ai-lab.pm-copilot'
 import { Route as AiLabProjectIntelligenceRouteImport } from './routes/ai-lab.project-intelligence'
@@ -45,6 +46,11 @@ const WorkRoute = WorkRouteImport.update({
   id: '/work',
   path: '/work',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AiLabIndexRoute = AiLabIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AiLabRoute,
 } as any)
 const AiLabAgileBoardRoute = AiLabAgileBoardRouteImport.update({
   id: '/agile-board',
@@ -92,11 +98,11 @@ export interface FileRoutesByFullPath {
   '/ai-lab/project-status-analyst': typeof AiLabProjectStatusAnalystRoute
   '/ai-lab/uat-buddy': typeof AiLabUatBuddyRoute
   '/ai-lab/weekly-status-automation': typeof AiLabWeeklyStatusAutomationRoute
+  '/ai-lab/': typeof AiLabIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/ai-lab': typeof AiLabRouteWithChildren
   '/resume': typeof ResumeRoute
   '/work': typeof WorkRoute
   '/ai-lab/agile-board': typeof AiLabAgileBoardRoute
@@ -105,6 +111,7 @@ export interface FileRoutesByTo {
   '/ai-lab/project-status-analyst': typeof AiLabProjectStatusAnalystRoute
   '/ai-lab/uat-buddy': typeof AiLabUatBuddyRoute
   '/ai-lab/weekly-status-automation': typeof AiLabWeeklyStatusAutomationRoute
+  '/ai-lab': typeof AiLabIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -119,6 +126,7 @@ export interface FileRoutesById {
   '/ai-lab/project-status-analyst': typeof AiLabProjectStatusAnalystRoute
   '/ai-lab/uat-buddy': typeof AiLabUatBuddyRoute
   '/ai-lab/weekly-status-automation': typeof AiLabWeeklyStatusAutomationRoute
+  '/ai-lab/': typeof AiLabIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -134,11 +142,11 @@ export interface FileRouteTypes {
     | '/ai-lab/project-status-analyst'
     | '/ai-lab/uat-buddy'
     | '/ai-lab/weekly-status-automation'
+    | '/ai-lab/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
-    | '/ai-lab'
     | '/resume'
     | '/work'
     | '/ai-lab/agile-board'
@@ -147,6 +155,7 @@ export interface FileRouteTypes {
     | '/ai-lab/project-status-analyst'
     | '/ai-lab/uat-buddy'
     | '/ai-lab/weekly-status-automation'
+    | '/ai-lab'
   id:
     | '__root__'
     | '/'
@@ -160,6 +169,7 @@ export interface FileRouteTypes {
     | '/ai-lab/project-status-analyst'
     | '/ai-lab/uat-buddy'
     | '/ai-lab/weekly-status-automation'
+    | '/ai-lab/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -206,6 +216,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/work'
       preLoaderRoute: typeof WorkRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/ai-lab/': {
+      id: '/ai-lab/'
+      path: '/'
+      fullPath: '/ai-lab/'
+      preLoaderRoute: typeof AiLabIndexRouteImport
+      parentRoute: typeof AiLabRoute
     }
     '/ai-lab/agile-board': {
       id: '/ai-lab/agile-board'
@@ -259,6 +276,7 @@ interface AiLabRouteChildren {
   AiLabProjectStatusAnalystRoute: typeof AiLabProjectStatusAnalystRoute
   AiLabUatBuddyRoute: typeof AiLabUatBuddyRoute
   AiLabWeeklyStatusAutomationRoute: typeof AiLabWeeklyStatusAutomationRoute
+  AiLabIndexRoute: typeof AiLabIndexRoute
 }
 
 const AiLabRouteChildren: AiLabRouteChildren = {
@@ -268,6 +286,7 @@ const AiLabRouteChildren: AiLabRouteChildren = {
   AiLabProjectStatusAnalystRoute: AiLabProjectStatusAnalystRoute,
   AiLabUatBuddyRoute: AiLabUatBuddyRoute,
   AiLabWeeklyStatusAutomationRoute: AiLabWeeklyStatusAutomationRoute,
+  AiLabIndexRoute: AiLabIndexRoute,
 }
 
 const AiLabRouteWithChildren = AiLabRoute._addFileChildren(AiLabRouteChildren)
