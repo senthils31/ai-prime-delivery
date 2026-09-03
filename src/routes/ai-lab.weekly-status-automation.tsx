@@ -1,3 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PlaceholderPage } from "@/components/PlaceholderPage";
-export const Route = createFileRoute("/ai-lab/weekly-status-automation")({ head: () => ({ meta: [{ title: "Weekly Status Automation — Senthilkumar Karuppiah" }, { name: "description", content: "Weekly Status Automation, an AI and workflow automation solution in Senthilkumar Karuppiah's AI PM Lab." }, { property: "og:title", content: "Weekly Status Automation — Senthilkumar Karuppiah" }, { property: "og:description", content: "Weekly Status Automation, an AI and workflow automation solution in Senthilkumar Karuppiah's AI PM Lab." }, { property: "og:url", content: "/ai-lab/weekly-status-automation" }, { property: "og:type", content: "product" }, { name: "twitter:card", content: "summary_large_image" }], links: [{ rel: "canonical", href: "/ai-lab/weekly-status-automation" }] }), component: () => <PlaceholderPage eyebrow="AI PM Lab · Live" title="Weekly Status Automation" copy="This product view is part of the next AI PM Lab release." /> });
+import { CaseStudyPage } from "@/components/CaseStudyPage";
+import { caseStudies } from "@/data/site";
+
+export const Route = createFileRoute("/ai-lab/weekly-status-automation")({
+  head: () => ({
+    meta: [
+      { title: "Weekly Status Automation | Case Study" },
+      {
+        name: "description",
+        content:
+          "An evidence-based case study for Weekly Status Automation, an executive project reporting workflow.",
+      },
+      { property: "og:title", content: "Weekly Status Automation | Case Study" },
+      {
+        property: "og:description",
+        content:
+          "An evidence-based case study for Weekly Status Automation, an executive project reporting workflow.",
+      },
+      { property: "og:url", content: "/ai-lab/weekly-status-automation" },
+      { property: "og:type", content: "article" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/ai-lab/weekly-status-automation" }],
+  }),
+  component: () => <CaseStudyPage study={caseStudies[2]} />,
+});
