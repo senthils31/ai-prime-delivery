@@ -63,6 +63,8 @@ body {
   font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+  -webkit-text-size-adjust: 100%;
 }
 
 ::selection { background: var(--blue-wash); color: var(--midnight); }
