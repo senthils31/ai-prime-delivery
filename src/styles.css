@@ -209,11 +209,11 @@ body {
   .loop-node { width: 6.6rem; min-height: 3.5rem; padding: 0.5rem; }
   .loop-node strong { font-size: 0.68rem; letter-spacing: 0.05em; }
   .loop-node small { font-size: 0.6rem; }
-  .node-plan { top: 2%; left: 3%; }
-  .node-execute { top: 24%; right: -1%; }
-  .node-observe { bottom: 11%; right: 1%; }
-  .node-intelligence { bottom: 1%; left: 2%; }
-  .node-optimize { top: 45%; left: -3%; }
+  .node-plan { top: 1%; left: 0; }
+  .node-execute { top: 22%; right: 0; }
+  .node-observe { bottom: 12%; right: 0; }
+  .node-intelligence { bottom: 1%; left: 0; }
+  .node-optimize { top: 44%; left: 0; }
   .loop-insight { width: 100%; padding: 0.85rem; }
   .loop-insight p { font-size: 0.68rem; }
   .section-pad { padding-block: 5rem; }
