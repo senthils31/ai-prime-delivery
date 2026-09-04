@@ -123,6 +123,8 @@ body {
 .dark-band .engine-grid::before { border-color: color-mix(in oklab, var(--intelligence-blue) 35%, transparent); }
 .dark-band .loop-node { background: color-mix(in oklab, var(--midnight) 92%, var(--pure-white)); color: var(--pure-white); border-color: color-mix(in oklab, var(--pure-white) 16%, transparent); }
 .dark-band .loop-node small { color: color-mix(in oklab, var(--pure-white) 52%, var(--midnight)); }
+.dark-band .loop-node.is-ai.is-active { background: color-mix(in oklab, var(--signal-violet) 22%, var(--midnight)); color: var(--pure-white); border-color: var(--signal-violet); }
+.dark-band .loop-node.is-ai.is-active small { color: color-mix(in oklab, var(--pure-white) 70%, var(--signal-violet)); }
 .dark-band .loop-insight { background: color-mix(in oklab, var(--midnight) 88%, var(--pure-white)); }
 .capability-card, .solution-card, .future-card { border: 1px solid var(--line); background: var(--pure-white); border-radius: 1rem; box-shadow: 0 10px 30px color-mix(in oklab, var(--midnight) 4%, transparent); }
 .capability-card { padding: 1.7rem; min-height: 13.5rem; transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease; }
