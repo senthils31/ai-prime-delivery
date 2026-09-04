@@ -32,7 +32,7 @@ function WorkPage() {
                 <span><strong className="mr-3 text-primary">↺</strong>Continuous improvement</span>
               </div>
             </div>
-            <div>
+            <div className="min-w-0">
               <DeliveryIntelligenceEngine large />
             </div>
           </div>
