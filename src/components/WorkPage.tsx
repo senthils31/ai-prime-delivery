@@ -21,7 +21,8 @@ function WorkPage() {
       <section className="dark-band section-pad overflow-hidden" id="delivery-loop">
         <div className="page-shell">
           <div className="grid items-center gap-10 lg:grid-cols-[0.75fr_1.25fr]">
-            <div>
+            <div className="min-w-0">
+
               <Label light>The Delivery Intelligence Loop</Label>
               <h2 className="section-title mt-5 max-w-[11ch]">Every project generates signals.</h2>
               <p className="body-copy mt-7 max-w-md">The opportunity is turning those signals into better decisions.</p>
@@ -31,7 +32,7 @@ function WorkPage() {
                 <span><strong className="mr-3 text-primary">↺</strong>Continuous improvement</span>
               </div>
             </div>
-            <div>
+            <div className="min-w-0">
               <DeliveryIntelligenceEngine large />
             </div>
           </div>
