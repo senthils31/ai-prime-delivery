@@ -67,12 +67,43 @@ export const capabilities = [
   },
 ];
 
+export const aiFirstDeliveryModel = [
+  {
+    number: "01",
+    title: "DISCOVER",
+    copy: "Requirements, knowledge and project intelligence",
+  },
+  {
+    number: "02",
+    title: "PLAN",
+    copy: "WBS, dependencies, resources and delivery strategy",
+  },
+  {
+    number: "03",
+    title: "EXECUTE",
+    copy: "Actions, meetings, risks and issue management",
+  },
+  {
+    number: "04",
+    title: "GOVERN",
+    copy: "Status, executive reporting and decision support",
+  },
+  {
+    number: "05",
+    title: "LEARN",
+    copy: "Knowledge capture, retrospectives and continuous improvement",
+  },
+];
+
 export const liveSolutions = [
   {
     slug: "uat-buddy",
     title: "UAT Buddy",
     copy: "AI-powered UAT knowledge assistant helping business users get faster answers and reducing dependency on project teams.",
     lines: ["30+ users", "~10 queries/day", "1–2 hrs/week effort reduced"],
+    businessProblem: "Business users needed recurring UAT guidance and project information.",
+    capability: "Self-service access to UAT and project knowledge.",
+    impact: "30+ users · ~10 queries/day · 1–2 hrs/week reduced",
     featured: true,
   },
   {
@@ -80,6 +111,9 @@ export const liveSolutions = [
     title: "Project Status Analyst",
     copy: "AI-powered project intelligence that helps delivery and technology leadership understand project status, risks and key signals.",
     lines: ["Directors", "Senior Directors", "Technology Leadership"],
+    businessProblem: "Leadership needed clearer project status, risks and delivery signals.",
+    capability: "AI-assisted project intelligence and decision support.",
+    impact: "Used by directors, senior directors and senior technology leadership",
     featured: false,
   },
   {
@@ -87,6 +121,9 @@ export const liveSolutions = [
     title: "Weekly Status Automation",
     copy: "Automated executive project reporting using AI and workflow automation across project information sources.",
     lines: ["Power Automate", "SharePoint", "Excel", "PowerPoint"],
+    businessProblem: "Weekly executive reporting required repeated consolidation across sources.",
+    capability: "Automated project intelligence and executive-ready communication.",
+    impact: "Runs twice weekly across Power Automate, SharePoint, Excel and PowerPoint",
     featured: false,
   },
 ];
@@ -96,12 +133,16 @@ export type CaseStudy = {
   name: string;
   positioning: string;
   copy: string;
+  status: string;
+  businessProblem: string;
+  capability: string;
   tags: string[];
   problem: string;
   solution: string;
   role: string;
   workflow: { label: string; detail: string }[];
   impact: { value: string; label: string }[];
+  roleResponsibilities: string[];
   before: string[];
   after: string[];
   lessons: string[];
@@ -113,6 +154,9 @@ export const caseStudies: CaseStudy[] = [
     name: "UAT Buddy",
     positioning: "AI-powered self-service assistant for UAT knowledge and support.",
     copy: "A practical knowledge assistant designed to help business users get faster answers during user acceptance testing, while reducing repeated dependency on project teams.",
+    status: "LIVE / OPERATIONAL",
+    businessProblem: "Business users needed recurring UAT guidance and project information. Repeated questions created support and training effort for project teams and slowed access to answers.",
+    capability: "Self-service access to relevant UAT and project knowledge at the point of need.",
     tags: ["AI Agent", "Project Delivery", "Knowledge Assistant", "Automation"],
     problem:
       "Business users needed recurring UAT guidance and project information. Repeated questions created support and training effort for project teams and slowed access to answers.",
@@ -129,6 +173,14 @@ export const caseStudies: CaseStudy[] = [
       { value: "30+", label: "business users" },
       { value: "~10", label: "user queries per day" },
       { value: "1–2 hrs", label: "UAT support effort reduced per week" },
+    ],
+    roleResponsibilities: [
+      "Problem identification",
+      "Use-case definition",
+      "Solution and workflow design",
+      "Stakeholder alignment",
+      "User adoption",
+      "Continuous improvement",
     ],
     before: [
       "Manual support",
@@ -153,6 +205,9 @@ export const caseStudies: CaseStudy[] = [
     name: "Project Status Analyst",
     positioning: "AI-assisted project intelligence for clearer delivery status, risks and signals.",
     copy: "A project intelligence concept for helping delivery and technology leadership understand project status, risks and key signals with greater clarity.",
+    status: "LIVE / OPERATIONAL",
+    businessProblem: "Delivery and technology leaders needed a clearer view of project status, risks and key signals.",
+    capability: "AI-assisted project intelligence and decision support for senior technology stakeholders.",
     tags: ["Project Intelligence", "Delivery Leadership", "Risk Signals", "Decision Support"],
     problem:
       "Delivery and technology leaders need a clearer view of project status, risks and key signals. The current project information does not include a verified metric for the resulting time or efficiency improvement.",
@@ -165,7 +220,19 @@ export const caseStudies: CaseStudy[] = [
       { label: "Action", detail: "Leadership gets a clearer decision view" },
       { label: "Outcome", detail: "Better-informed delivery conversations" },
     ],
-    impact: [{ value: "On request", label: "implementation details and measured outcomes" }],
+    impact: [
+      { value: "Directors", label: "solution users" },
+      { value: "Senior Directors", label: "solution users" },
+      { value: "Senior technology leadership", label: "solution users" },
+    ],
+    roleResponsibilities: [
+      "Problem identification",
+      "Use-case definition",
+      "Information-flow design",
+      "Stakeholder alignment",
+      "Delivery guidance",
+      "Outcome definition",
+    ],
     before: [
       "Project information in multiple places",
       "Status interpretation takes leadership attention",
@@ -187,6 +254,9 @@ export const caseStudies: CaseStudy[] = [
     name: "Weekly Status Automation",
     positioning: "Automated executive project reporting across connected information sources.",
     copy: "A workflow automation initiative for turning project information into repeatable executive reporting using Power Automate, SharePoint, Excel and PowerPoint.",
+    status: "LIVE / OPERATIONAL",
+    businessProblem: "Weekly executive project reporting drew on information from several project sources and required repeated consolidation.",
+    capability: "Automated project intelligence that organizes status and communicates executive-ready updates.",
     tags: ["Workflow Automation", "Executive Reporting", "Power Automate", "Governance"],
     problem:
       "Weekly executive project reporting draws on information from several project sources. Reassembling that information repeatedly creates avoidable delivery operations effort; verified time or efficiency metrics are not currently available.",
@@ -199,7 +269,19 @@ export const caseStudies: CaseStudy[] = [
       { label: "Action", detail: "Reporting workflow assembles the update" },
       { label: "Outcome", detail: "A repeatable executive reporting process" },
     ],
-    impact: [{ value: "On request", label: "implementation details and measured outcomes" }],
+    impact: [
+      { value: "Twice weekly", label: "reporting rhythm" },
+      { value: "Power Automate", label: "workflow automation" },
+      { value: "SharePoint · Excel · PowerPoint", label: "connected information sources" },
+    ],
+    roleResponsibilities: [
+      "Problem identification",
+      "Workflow definition",
+      "Source alignment",
+      "Stakeholder expectations",
+      "Governance",
+      "Continuous improvement",
+    ],
     before: [
       "Information across project sources",
       "Repeated weekly assembly",

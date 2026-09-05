@@ -64,7 +64,10 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
             <ArrowLeft className="size-4" aria-hidden="true" /> Back to AI PM Lab
           </Link>
           <div className="mt-16 max-w-4xl">
-            <p className="overline text-primary">AI PM Lab · Evidence-based case study</p>
+            <div className="flex flex-wrap items-center gap-4">
+              <p className="overline text-primary">AI PM Lab · Evidence-based case study</p>
+              <span className="status-pill">{study.status}</span>
+            </div>
             <h1 className="display-title mt-5 max-w-[12ch]">{study.name}</h1>
             <p className="case-study-positioning mt-7 max-w-2xl">{study.positioning}</p>
             <div className="mt-8 flex flex-wrap gap-2">
@@ -79,12 +82,29 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
       </section>
 
       <div className="page-shell">
-        <CaseStudySection eyebrow="01 · The problem" title="The delivery friction.">
-          <p className="body-copy">{study.problem}</p>
+        <CaseStudySection eyebrow="01 · The problem" title="The Problem">
+          <p className="body-copy">{study.businessProblem}</p>
+          <p className="body-copy mt-5">{study.problem}</p>
         </CaseStudySection>
 
-        <CaseStudySection eyebrow="02 · The solution" title="A practical intervention.">
+        <CaseStudySection eyebrow="02 · The intervention" title="The AI Intervention">
           <p className="body-copy">{study.solution}</p>
+          <p className="body-copy mt-5">The focus was a real delivery problem and a practical AI or automation-enabled way of working—not technology for its own sake.</p>
+        </CaseStudySection>
+
+        <CaseStudySection eyebrow="03 · My role" title="My Role">
+          <p className="body-copy">{study.role}</p>
+          <div className="case-study-role-list mt-8 grid gap-3 sm:grid-cols-2">
+            {study.roleResponsibilities.map((role) => (
+              <span key={role}>
+                <Check className="size-4 text-primary" aria-hidden="true" />
+                {role}
+              </span>
+            ))}
+          </div>
+        </CaseStudySection>
+
+        <CaseStudySection eyebrow="04 · The workflow" title="How It Works">
           <div className="case-study-flow mt-10">
             {study.workflow.map((step, index) => (
               <div className="case-study-flow-step" key={step.label}>
@@ -98,32 +118,13 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
             ))}
           </div>
         </CaseStudySection>
-
-        <CaseStudySection eyebrow="03 · My role" title="Leading the change.">
-          <p className="body-copy">{study.role}</p>
-          <div className="case-study-role-list mt-8 grid gap-3 sm:grid-cols-2">
-            {[
-              "Problem identification",
-              "Use-case definition",
-              "Solution and workflow design",
-              "Stakeholder alignment",
-              "Delivery and adoption",
-              "Measurement and improvement",
-            ].map((role) => (
-              <span key={role}>
-                <Check className="size-4 text-primary" aria-hidden="true" />
-                {role}
-              </span>
-            ))}
-          </div>
-        </CaseStudySection>
       </div>
 
       <section className="dark-band section-pad case-study-impact">
         <div className="page-shell">
-          <p className="overline text-dark-muted">04 · Business impact</p>
+          <p className="overline text-dark-muted">06 · Business impact</p>
           <div className="mt-5 flex flex-col justify-between gap-8 md:flex-row md:items-end">
-            <h2 className="section-title max-w-[10ch]">Evidence over assumptions.</h2>
+            <h2 className="section-title max-w-[10ch]">Business Impact</h2>
             <p className="max-w-md text-sm leading-6 text-dark-muted">
               Only verified information is shown here. Where a metric is not currently available,
               the case study says so.
@@ -141,7 +142,7 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
       </section>
 
       <div className="page-shell">
-        <CaseStudySection eyebrow="05 · How the work changed" title="Before → after.">
+        <CaseStudySection eyebrow="07 · Transformation" title="Before → After">
           <div className="before-after-grid">
             <div>
               <p className="overline text-slate">Before</p>
@@ -167,7 +168,7 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
             </div>
           </div>
         </CaseStudySection>
-        <CaseStudySection eyebrow="06 · PM insight" title="What this taught me.">
+        <CaseStudySection eyebrow="08 · PM insight" title="What This Taught Me">
           <ul className="case-study-lessons">
             {study.lessons.map((lesson) => (
               <li key={lesson}>
@@ -176,6 +177,23 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
               </li>
             ))}
           </ul>
+        </CaseStudySection>
+        <CaseStudySection eyebrow="09 · Reusable framework" title="My AI-First PM Approach">
+          <div className="ai-first-approach">
+            {[
+              ["01", "IDENTIFY", "Find repetitive or high-friction delivery problems."],
+              ["02", "PRIORITIZE", "Assess business value, feasibility and adoption potential."],
+              ["03", "DESIGN", "Create an AI/automation-enabled workflow."],
+              ["04", "DELIVER", "Align stakeholders, implement, test and drive adoption."],
+              ["05", "MEASURE", "Track usage, effort reduction, quality and business outcomes."],
+            ].map(([number, title, detail]) => (
+              <div key={number}>
+                <span>{number}</span>
+                <strong>{title}</strong>
+                <p>{detail}</p>
+              </div>
+            ))}
+          </div>
         </CaseStudySection>
       </div>
 

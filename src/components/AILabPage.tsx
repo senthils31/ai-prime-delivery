@@ -49,20 +49,26 @@ export function AILabPage() {
                 key={study.slug}
                 className={`solution-card case-study-card ${index === 0 ? "is-featured" : ""}`}
               >
-                <span className="status-pill">LIVE CASE STUDY</span>
+                <span className="status-pill">{study.status}</span>
                 <p className="case-study-index mt-7">0{index + 1}</p>
                 <h2 className="mt-3 text-2xl font-semibold tracking-[-0.04em]">{study.name}</h2>
                 <p className="mt-4 text-sm font-semibold leading-6 text-foreground">
                   {study.positioning}
                 </p>
-                <div className="case-study-card-flow mt-7 border-y border-border py-5">
-                  <span>Problem</span>
-                  <span aria-hidden="true">↓</span>
-                  <span>Solution</span>
-                  <span aria-hidden="true">↓</span>
-                  <span>Impact</span>
+                <div className="case-study-card-details mt-7 border-y border-border py-5">
+                  <div>
+                    <span>Business problem</span>
+                    <p>{study.businessProblem}</p>
+                  </div>
+                  <div>
+                    <span>AI / automation capability</span>
+                    <p>{study.capability}</p>
+                  </div>
+                  <div>
+                    <span>Measured / observed impact</span>
+                    <p>{study.impact.map((item) => `${item.value} — ${item.label}`).join(" · ")}</p>
+                  </div>
                 </div>
-                <p className="mt-5 text-sm leading-6 text-slate">{study.copy}</p>
                 <CaseStudyLink slug={study.slug}>
                   <span className="mt-auto inline-flex items-center gap-2 pt-7 text-xs font-bold uppercase tracking-[0.12em] text-primary">
                     Explore case study <ArrowRight className="size-4" aria-hidden="true" />
