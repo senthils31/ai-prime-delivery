@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Github, Linkedin, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import { capabilities, career, futureSolutions, liveSolutions } from "@/data/site";
+import { aiFirstDeliveryModel, capabilities, career, futureSolutions, liveSolutions } from "@/data/site";
 import { CaseStudyLink } from "@/components/AILabPage";
 
 function Label({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
@@ -130,7 +130,20 @@ function HomePage() {
               >
                 <span className="status-pill">LIVE</span>
                 <h3 className="mt-8 text-2xl font-semibold tracking-[-0.04em]">{solution.title}</h3>
-                <p className="mt-4 text-sm leading-6 text-slate">{solution.copy}</p>
+                <div className="home-solution-details mt-5">
+                  <div>
+                    <span>Business problem</span>
+                    <p>{solution.businessProblem}</p>
+                  </div>
+                  <div>
+                    <span>AI / automation capability</span>
+                    <p>{solution.capability}</p>
+                  </div>
+                  <div>
+                    <span>Observed impact</span>
+                    <p>{solution.impact}</p>
+                  </div>
+                </div>
                 <div className="mt-auto flex flex-wrap gap-x-5 gap-y-2 border-t border-border pt-5">
                   {solution.lines.map((line) => (
                     <span key={line} className="text-xs font-semibold text-foreground/75">
@@ -164,12 +177,36 @@ function HomePage() {
         </div>
       </section>
 
+      <section className="section-pad border-y border-border bg-pure-white" id="delivery-model">
+        <div className="page-shell">
+          <Label>My AI-First Delivery Model</Label>
+          <div className="mt-5 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+            <h2 className="section-title max-w-[12ch]">AI amplifies project leadership.</h2>
+            <p className="body-copy max-w-md">AI doesn&apos;t replace project leadership. It amplifies it.</p>
+          </div>
+          <div className="delivery-model mt-14">
+            {aiFirstDeliveryModel.map((step, index) => (
+              <article key={step.number} className="delivery-model-step">
+                <span>{step.number}</span>
+                <h3>{step.title}</h3>
+                <p>{step.copy}</p>
+                {index < aiFirstDeliveryModel.length - 1 && <span className="delivery-model-arrow" aria-hidden="true">→</span>}
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section-pad border-t border-border bg-pure-white" id="career">
         <div className="page-shell">
           <Label>19+ Years of Enterprise Delivery</Label>
           <h2 className="section-title mt-5 max-w-[12ch]">
             From enterprise technology to <span className="text-primary">AI-first delivery.</span>
           </h2>
+           <div className="career-evolution mt-10">
+             <p className="overline text-slate">Career evolution</p>
+             <p className="career-evolution-line">Enterprise Technology <span>↓</span> Service Delivery <span>↓</span> Release Management <span>↓</span> Project Management <span>↓</span> Digital Transformation <span>↓</span> AI-First Delivery</p>
+           </div>
           <div className="timeline">
             {career.map((item) => (
               <article className="timeline-item" key={item.company}>
@@ -242,11 +279,10 @@ function HomePage() {
           <div>
             <Label light>Next chapter</Label>
             <h2 className="section-title mt-5 max-w-[11ch]">
-              Let&apos;s build the future of delivery.
+               Let&apos;s build smarter ways to deliver.
             </h2>
             <p className="body-copy mt-6 max-w-md">
-              Exploring opportunities where enterprise transformation, AI and project leadership
-              intersect.
+               Exploring senior opportunities across AI-first project leadership, digital transformation and enterprise delivery.
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
@@ -266,6 +302,9 @@ function HomePage() {
               className="border-dark-line bg-transparent text-pure-white hover:bg-dark-hover hover:text-pure-white"
             >
               <Link to="/resume">View Resume</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="border-dark-line bg-transparent text-pure-white hover:bg-dark-hover hover:text-pure-white">
+              <Link to="/about">GitHub</Link>
             </Button>
           </div>
         </div>

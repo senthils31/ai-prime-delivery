@@ -136,6 +136,25 @@ body {
 .case-study-index { color: var(--intelligence-blue); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; }
 .case-study-card-flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; gap: 0.55rem; color: var(--slate); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .case-study-card-flow span:nth-child(even) { color: var(--intelligence-blue); }
+.case-study-card-details, .home-solution-details { display: grid; gap: 0.85rem; }
+.case-study-card-details > div, .home-solution-details > div { display: grid; gap: 0.25rem; }
+.case-study-card-details span, .home-solution-details span { color: var(--intelligence-blue); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.case-study-card-details p, .home-solution-details p { color: var(--slate); font-size: 0.76rem; line-height: 1.45; }
+.home-solution-details { flex: 1; }
+.delivery-model { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border: 1px solid var(--line); background: var(--line); gap: 1px; }
+.delivery-model-step { position: relative; min-height: 12rem; padding: 1.4rem; background: var(--pure-white); }
+.delivery-model-step > span:first-child { color: var(--intelligence-blue); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; }
+.delivery-model-step h3 { margin-top: 2.5rem; font-size: 0.8rem; letter-spacing: 0.1em; }
+.delivery-model-step p { margin-top: 0.6rem; color: var(--slate); font-size: 0.76rem; line-height: 1.45; }
+.delivery-model-arrow { position: absolute; top: 1.35rem; right: 1rem; color: var(--intelligence-blue); font-size: 1.1rem; }
+.career-evolution { border-left: 2px solid var(--signal-violet); padding-left: 1.25rem; }
+.career-evolution-line { color: var(--slate); font-size: 0.85rem; font-weight: 700; line-height: 1.8; }
+.career-evolution-line span { padding-inline: 0.35rem; color: var(--intelligence-blue); }
+.ai-first-approach { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border: 1px solid var(--line); background: var(--line); gap: 1px; }
+.ai-first-approach > div { min-height: 11rem; padding: 1.25rem; background: var(--pure-white); }
+.ai-first-approach span { color: var(--intelligence-blue); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; }
+.ai-first-approach strong { display: block; margin-top: 2rem; font-size: 0.78rem; letter-spacing: 0.1em; }
+.ai-first-approach p { margin-top: 0.6rem; color: var(--slate); font-size: 0.76rem; line-height: 1.45; }
 .case-study-page { overflow: hidden; }
 .case-study-back { display: inline-flex; align-items: center; gap: 0.55rem; color: var(--slate); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: color 180ms ease; }
 .case-study-back:hover { color: var(--midnight); }
@@ -230,6 +249,11 @@ body {
   .case-study-metrics, .case-study-metrics.single, .before-after-grid { grid-template-columns: 1fr; max-width: none; }
   .case-study-metrics > div { min-height: auto; }
   .case-study-card { min-height: 0; }
+  .delivery-model, .ai-first-approach { grid-template-columns: 1fr; }
+  .delivery-model-step, .ai-first-approach > div { min-height: auto; }
+  .delivery-model-step h3, .ai-first-approach strong { margin-top: 1.2rem; }
+  .delivery-model-arrow { top: auto; right: 1.2rem; bottom: 1rem; transform: rotate(90deg); }
+  .career-evolution-line { font-size: 0.78rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }

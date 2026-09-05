@@ -200,16 +200,23 @@ export function AboutPage() {
         </div>
       </section>
 
+      <section className="section-pad border-y border-border bg-pure-white">
+        <div className="page-shell">
+          <p className="overline text-primary">Career evolution</p>
+          <h2 className="section-title mt-5 max-w-[13ch]">Experience that led to AI-first delivery.</h2>
+          <p className="career-evolution-line mt-9">Enterprise Technology <span>↓</span> Service Delivery <span>↓</span> Release Management <span>↓</span> Project Management <span>↓</span> Digital Transformation <span>↓</span> AI-First Delivery</p>
+        </div>
+      </section>
+
       <section className="dark-band section-pad">
         <div className="page-shell flex flex-col items-start justify-between gap-9 md:flex-row md:items-end">
           <div>
             <p className="overline text-dark-muted">Next chapter</p>
             <h2 className="section-title mt-5 max-w-[11ch]">
-              Let&apos;s build the future of delivery.
+               Let&apos;s build smarter ways to deliver.
             </h2>
             <p className="body-copy mt-6 max-w-md">
-              Exploring opportunities where enterprise transformation, AI and project leadership
-              intersect.
+               Exploring senior opportunities across AI-first project leadership, digital transformation and enterprise delivery.
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
