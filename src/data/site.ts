@@ -218,8 +218,8 @@ export const caseStudies: CaseStudy[] = [
       "I defined an intelligence use case that brings project signals into a more decision-ready view for leadership. Detailed implementation information and measured outcomes are available on request.",
     role: "My focus is on identifying the leadership need, defining the decision-support use case, shaping the information flow, aligning stakeholders and guiding delivery toward a useful project outcome.",
     workflow: [
-      { label: "Input", detail: "Project status and delivery signals" },
-      { label: "Intelligence", detail: "Signals are interpreted for patterns and risks" },
+      { label: "Input", detail: "Ongoing project status and delivery signals" },
+      { label: "Intelligence", detail: "Signals are organized for patterns, risks and milestones" },
       { label: "Action", detail: "Leadership gets a clearer decision view" },
       { label: "Outcome", detail: "Better-informed delivery conversations" },
     ],
@@ -264,13 +264,13 @@ export const caseStudies: CaseStudy[] = [
     problem:
       "Weekly executive project reporting draws on information from several project sources. Reassembling that information repeatedly creates avoidable delivery operations effort; verified time or efficiency metrics are not currently available.",
     solution:
-      "I shaped an automated reporting workflow across Power Automate, SharePoint, Excel and PowerPoint to make the reporting process more repeatable. Implementation details and measured outcomes are available on request.",
+      "I shaped an automated reporting workflow that reviews ongoing project information, organizes key milestone information, generates executive summaries and distributes updates using Power Automate across SharePoint, Excel and PowerPoint. The workflow runs twice weekly to support a repeatable communication rhythm.",
     role: "I focus on the reporting problem, workflow definition, source alignment, stakeholder expectations, governance and delivery of an automation approach that supports executive decision-making.",
     workflow: [
       { label: "Input", detail: "Project information across working sources" },
-      { label: "Intelligence", detail: "Relevant status information is organized" },
-      { label: "Action", detail: "Reporting workflow assembles the update" },
-      { label: "Outcome", detail: "A repeatable executive reporting process" },
+      { label: "Intelligence", detail: "Milestones and status information are organized" },
+      { label: "Action", detail: "Executive summary is assembled and distributed" },
+      { label: "Outcome", detail: "A repeatable executive communication rhythm" },
     ],
     impact: [
       { value: "Twice weekly", label: "reporting rhythm" },

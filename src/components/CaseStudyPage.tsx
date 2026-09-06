@@ -122,7 +122,7 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
 
       <section className="dark-band section-pad case-study-impact">
         <div className="page-shell">
-          <p className="overline text-dark-muted">06 · Business impact</p>
+          <p className="overline text-dark-muted">05 · Business impact</p>
           <div className="mt-5 flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <h2 className="section-title max-w-[10ch]">Business Impact</h2>
             <p className="max-w-md text-sm leading-6 text-dark-muted">
