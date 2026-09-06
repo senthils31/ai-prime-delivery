@@ -10,10 +10,10 @@ export function CaseStudyLink({
   slug: "uat-buddy" | "project-status-analyst" | "weekly-status-automation";
   children: React.ReactNode;
 }) {
-  if (slug === "uat-buddy") return <Link to="/ai-lab/uat-buddy">{children}</Link>;
+  if (slug === "uat-buddy") return <Link to="/ai-pm-lab/uat-buddy">{children}</Link>;
   if (slug === "project-status-analyst")
-    return <Link to="/ai-lab/project-status-analyst">{children}</Link>;
-  return <Link to="/ai-lab/weekly-status-automation">{children}</Link>;
+    return <Link to="/ai-pm-lab/project-status-analyst">{children}</Link>;
+  return <Link to="/ai-pm-lab/weekly-status-automation">{children}</Link>;
 }
 
 export function AILabPage() {

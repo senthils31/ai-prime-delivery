@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CaseStudyPage } from "@/components/CaseStudyPage";
-import { caseStudies } from "@/data/site";
+import { getCaseStudy } from "@/data/site";
 
 export const Route = createFileRoute("/ai-lab/project-status-analyst")({
   head: () => ({
@@ -23,5 +23,5 @@ export const Route = createFileRoute("/ai-lab/project-status-analyst")({
     ],
     links: [{ rel: "canonical", href: "/ai-lab/project-status-analyst" }],
   }),
-  component: () => <CaseStudyPage study={caseStudies[1]} />,
+  component: () => <CaseStudyPage study={getCaseStudy("project-status-analyst")} />,
 });

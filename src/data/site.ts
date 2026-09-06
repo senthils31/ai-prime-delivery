@@ -126,7 +126,7 @@ export const liveSolutions = [
     impact: "Runs twice weekly across Power Automate, SharePoint, Excel and PowerPoint",
     featured: false,
   },
-];
+] as const;
 
 export type CaseStudy = {
   slug: "uat-buddy" | "project-status-analyst" | "weekly-status-automation";
@@ -299,6 +299,14 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
 ];
+
+export function getCaseStudy(slug: CaseStudy["slug"]): CaseStudy {
+  const study = caseStudies.find((item) => item.slug === slug);
+  if (!study) {
+    throw new Error(`Unknown case study: ${slug}`);
+  }
+  return study;
+}
 
 export const futureSolutions = [
   { title: "AI Agile Board", copy: "AI-assisted Kanban and sprint intelligence." },
