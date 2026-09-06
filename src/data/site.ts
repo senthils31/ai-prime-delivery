@@ -101,6 +101,7 @@ export const liveSolutions = [
     title: "UAT Buddy",
     copy: "AI-powered UAT knowledge assistant helping business users get faster answers and reducing dependency on project teams.",
     lines: ["30+ users", "~10 queries/day", "1–2 hrs/week effort reduced"],
+    status: "LIVE / OPERATIONAL",
     businessProblem: "Business users needed recurring UAT guidance and project information.",
     capability: "Self-service access to UAT and project knowledge.",
     impact: "30+ users · ~10 queries/day · 1–2 hrs/week reduced",
@@ -111,6 +112,7 @@ export const liveSolutions = [
     title: "Project Status Analyst",
     copy: "AI-powered project intelligence that helps delivery and technology leadership understand project status, risks and key signals.",
     lines: ["Directors", "Senior Directors", "Technology Leadership"],
+    status: "LIVE / OPERATIONAL",
     businessProblem: "Leadership needed clearer project status, risks and delivery signals.",
     capability: "AI-assisted project intelligence and decision support.",
     impact: "Used by directors, senior directors and senior technology leadership",
@@ -121,12 +123,13 @@ export const liveSolutions = [
     title: "Weekly Status Automation",
     copy: "Automated executive project reporting using AI and workflow automation across project information sources.",
     lines: ["Power Automate", "SharePoint", "Excel", "PowerPoint"],
+    status: "LIVE / OPERATIONAL",
     businessProblem: "Weekly executive reporting required repeated consolidation across sources.",
     capability: "Automated project intelligence and executive-ready communication.",
     impact: "Runs twice weekly across Power Automate, SharePoint, Excel and PowerPoint",
     featured: false,
   },
-];
+] as const;
 
 export type CaseStudy = {
   slug: "uat-buddy" | "project-status-analyst" | "weekly-status-automation";
@@ -215,8 +218,8 @@ export const caseStudies: CaseStudy[] = [
       "I defined an intelligence use case that brings project signals into a more decision-ready view for leadership. Detailed implementation information and measured outcomes are available on request.",
     role: "My focus is on identifying the leadership need, defining the decision-support use case, shaping the information flow, aligning stakeholders and guiding delivery toward a useful project outcome.",
     workflow: [
-      { label: "Input", detail: "Project status and delivery signals" },
-      { label: "Intelligence", detail: "Signals are interpreted for patterns and risks" },
+      { label: "Input", detail: "Ongoing project status and delivery signals" },
+      { label: "Intelligence", detail: "Signals are organized for patterns, risks and milestones" },
       { label: "Action", detail: "Leadership gets a clearer decision view" },
       { label: "Outcome", detail: "Better-informed delivery conversations" },
     ],
@@ -261,13 +264,13 @@ export const caseStudies: CaseStudy[] = [
     problem:
       "Weekly executive project reporting draws on information from several project sources. Reassembling that information repeatedly creates avoidable delivery operations effort; verified time or efficiency metrics are not currently available.",
     solution:
-      "I shaped an automated reporting workflow across Power Automate, SharePoint, Excel and PowerPoint to make the reporting process more repeatable. Implementation details and measured outcomes are available on request.",
+      "I shaped an automated reporting workflow that reviews ongoing project information, organizes key milestone information, generates executive summaries and distributes updates using Power Automate across SharePoint, Excel and PowerPoint. The workflow runs twice weekly to support a repeatable communication rhythm.",
     role: "I focus on the reporting problem, workflow definition, source alignment, stakeholder expectations, governance and delivery of an automation approach that supports executive decision-making.",
     workflow: [
       { label: "Input", detail: "Project information across working sources" },
-      { label: "Intelligence", detail: "Relevant status information is organized" },
-      { label: "Action", detail: "Reporting workflow assembles the update" },
-      { label: "Outcome", detail: "A repeatable executive reporting process" },
+      { label: "Intelligence", detail: "Milestones and status information are organized" },
+      { label: "Action", detail: "Executive summary is assembled and distributed" },
+      { label: "Outcome", detail: "A repeatable executive communication rhythm" },
     ],
     impact: [
       { value: "Twice weekly", label: "reporting rhythm" },
@@ -299,6 +302,14 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
 ];
+
+export function getCaseStudy(slug: CaseStudy["slug"]): CaseStudy {
+  const study = caseStudies.find((item) => item.slug === slug);
+  if (!study) {
+    throw new Error(`Unknown case study: ${slug}`);
+  }
+  return study;
+}
 
 export const futureSolutions = [
   { title: "AI Agile Board", copy: "AI-assisted Kanban and sprint intelligence." },

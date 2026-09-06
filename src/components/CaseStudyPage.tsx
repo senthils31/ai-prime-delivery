@@ -43,15 +43,15 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
 
   const nextLink =
     nextStudy === "uat-buddy" ? (
-      <Link to="/ai-lab/uat-buddy">
+      <Link to="/ai-pm-lab/uat-buddy">
         Next case study <ArrowRight aria-hidden="true" />
       </Link>
     ) : nextStudy === "project-status-analyst" ? (
-      <Link to="/ai-lab/project-status-analyst">
+      <Link to="/ai-pm-lab/project-status-analyst">
         Next case study <ArrowRight aria-hidden="true" />
       </Link>
     ) : (
-      <Link to="/ai-lab/weekly-status-automation">
+      <Link to="/ai-pm-lab/weekly-status-automation">
         Next case study <ArrowRight aria-hidden="true" />
       </Link>
     );
@@ -60,7 +60,7 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
     <main className="case-study-page">
       <section className="case-study-hero section-pad border-b border-border bg-pure-white">
         <div className="page-shell">
-          <Link to="/ai-lab" className="case-study-back">
+            <Link to="/ai-pm-lab" className="case-study-back">
             <ArrowLeft className="size-4" aria-hidden="true" /> Back to AI PM Lab
           </Link>
           <div className="mt-16 max-w-4xl">
@@ -122,7 +122,7 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
 
       <section className="dark-band section-pad case-study-impact">
         <div className="page-shell">
-          <p className="overline text-dark-muted">06 · Business impact</p>
+          <p className="overline text-dark-muted">05 · Business impact</p>
           <div className="mt-5 flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <h2 className="section-title max-w-[10ch]">Business Impact</h2>
             <p className="max-w-md text-sm leading-6 text-dark-muted">
@@ -132,7 +132,7 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
           </div>
           <div className={`case-study-metrics mt-14 ${study.impact.length === 1 ? "single" : ""}`}>
             {study.impact.map((item) => (
-              <div key={item.label}>
+              <div key={`${item.value}-${item.label}`}>
                 <span>{item.value}</span>
                 <p>{item.label}</p>
               </div>
