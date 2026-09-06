@@ -132,7 +132,7 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
           </div>
           <div className={`case-study-metrics mt-14 ${study.impact.length === 1 ? "single" : ""}`}>
             {study.impact.map((item) => (
-              <div key={item.label}>
+              <div key={`${item.value}-${item.label}`}>
                 <span>{item.value}</span>
                 <p>{item.label}</p>
               </div>
